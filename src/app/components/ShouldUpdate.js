@@ -15,17 +15,20 @@ export default class ShouldUpdate extends Component {
         } else {
             return false;
         }
+
     }
 
     changeText = () => {
-        this.setState({text: this.state.text + 1})
+        this.setState({text: this.state.text + Math.random()})
     }
 
     render() {
         console.log('ShouldUpdate rendering....')
         return (
             <div>
-                <div>Should Update component ----{this.state.text} <button onClick={this.changeText}>Click to change</button></div>
+                <div>Should Update component ----{this.state.text} 
+                
+                <button onClick={this.changeText}>Click to change</button></div>
             </div>
         )
     }

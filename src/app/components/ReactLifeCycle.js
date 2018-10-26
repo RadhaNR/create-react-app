@@ -9,12 +9,12 @@ export default class ReactLifeCycle extends Component {
         }
     }
     componentWillMount() {
-        console.log('Component will mount.....')
+        console.log('Component will mount.....');
     }
+
     componentDidMount() {
         console.log('component did mount')
     }
-
 
     componentWillReceiveProps(newProps) {
         console.log('Component WILL RECIEVE PROPS!.....', newProps)
@@ -24,25 +24,21 @@ export default class ReactLifeCycle extends Component {
         console.log('component shouldComponentUpdate..', newProps, newState)
         return true;
     }
+
     componentWillUpdate(nextProps, nextState) {
         console.log('Component WILL UPDATE!....', nextProps, nextState);
     }
+
     componentDidUpdate(prevProps, prevState) {
         console.log('Component DID UPDATE!.....', prevProps, prevState)
     }
 
-    componentWillUnmount() {
-    
+    componentWillUnmount() {    
         console.log('Component WILL UNMOUNT!.....')
     }
 
     changeText = () => {
-
         this.setState({text: Math.random()});
-
-        // setInterval(function() {
-        //     console.log('in setinterval')
-        // }, 1000);
     }
 
     render() {

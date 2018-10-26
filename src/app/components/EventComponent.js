@@ -26,7 +26,7 @@ export default class EventComponent extends Component {
 
         // bad way of updating state
         // this.state.search = event.target.value;
-        //  this.forceUpdate();
+        // this.forceUpdate();
 
         // good way of updating state
         this.setState({ search: event.target.value });
@@ -36,6 +36,7 @@ export default class EventComponent extends Component {
         console.log('Calling render method...........')
         return (
             <div>
+
                 <button onClick={this.delete}>Click</button><br /><br />
 
                 <button onMouseEnter={(event) => this.deleteRow(123, event)}>Mouse Enter Event</button><br /><br />
