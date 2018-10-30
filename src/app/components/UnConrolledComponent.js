@@ -4,10 +4,20 @@ export default class UnControlledComponent extends Component {
 
     submitForm = (event) => {
         event.preventDefault();
-        const emailId = this.emailId.value;
+        const userName = this.emailId.value;
         const password = this.password.value;
-        console.log(emailId, password)
+        const obj = {
+            userName,
+            password
+        }
+        console.log(obj)
         //do something 
+
+        //this.state.name = "HCL";
+        // this.forceUpdate();
+
+        this.setState({ name: "HCL" })
+
     }
     render() {
         return (
@@ -16,15 +26,15 @@ export default class UnControlledComponent extends Component {
                     <div className="form-group">
                         <label className="control-label col-lg-2 col-md-2 col-sm-2" htmlFor="userName">E-Mail</label>
                         <div className="col-lg-10 col-md-10 col-sm-10">
-                            <input type="email" className="form-control" id="userName" placeholder="Enter email" name="userName" ref={(userInput) => this.emailId =
-                        userInput} />
+                            <input type="email" className="form-control" id="userName" placeholder="Enter email" name="userName"
+                                ref={(userName) => this.emailId = userName} />
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-lg-2 col-md-2 col-sm-2" htmlFor="password">Password</label>
                         <div className="col-lg-10 col-md-10 col-sm-10">
-                            <input type="password" className="form-control" id="password" placeholder="Enter Password" name="password" ref={(userInput) => this.password =
-                        userInput} />
+                            <input type="password" className="form-control" id="password" placeholder="Enter Password" name="password"
+                                ref={(password) => this.password = password} />
                         </div>
                     </div>
 

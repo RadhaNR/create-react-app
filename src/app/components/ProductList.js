@@ -3,6 +3,7 @@ import axios from 'axios';
 import Product from './Product';
 
 import { connect } from 'react-redux';
+
 import { bindActionCreators } from 'redux';
 import * as cartAction from '../actions/cartAction';
 

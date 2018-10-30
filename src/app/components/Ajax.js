@@ -30,6 +30,7 @@ export default class Ajax extends Component {
     render() {
         return (
             <div>
+                No of user is : {this.state.userList.length}
                 <User user={this.state.userList}/>
             </div>
         )
