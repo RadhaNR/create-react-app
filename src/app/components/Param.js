@@ -3,7 +3,7 @@ import React from 'react';
 const Param = ({ match }) => {
     console.log(match)
     return (
-        <div>{match.params.id}</div>
+        <div className="param">{match.params.id}</div>
     )
 }
 

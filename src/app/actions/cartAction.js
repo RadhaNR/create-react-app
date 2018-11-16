@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 
 export const addToCart = (item) => {
+    console.log("in action/.....", item)
     return {
         type: actionTypes.ADD_TO_CART,
         item

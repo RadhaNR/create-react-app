@@ -16,6 +16,7 @@ export default class EventComponent extends Component {
 
     delete = () => {
         console.log('deleting all', this.state.name);
+        this.props.history.push('/productList');
     }
     deleteRow = (id, evt) => {
         console.log(id, evt)
@@ -37,13 +38,13 @@ export default class EventComponent extends Component {
         return (
             <div>
 
-                <button onClick={this.delete}>Click</button><br /><br />
+                <button onClick={this.delete} id="btn1">Click</button><br /><br />
 
-                <button onMouseEnter={(event) => this.deleteRow(123, event)}>Mouse Enter Event</button><br /><br />
+                <button onMouseEnter={(event) => this.deleteRow(123, event)} id="btn2">Mouse Enter Event</button><br /><br />
 
-                <button onClick={this.es5FunClick}>ES5 function</button><br /><br />
+                <button onClick={this.es5FunClick} id="btn3">ES5 function</button><br /><br />
 
-                <input type="text" value={this.state.search} name="search" placeholder="Enter text" onChange={this.handleSearch} />
+                <input type="text" value={this.state.search} name="search" placeholder="Enter text" onChange={this.handleSearch} id="search"/>
             </div>
         );
     }

@@ -9,7 +9,7 @@ export default class ShouldUpdate extends Component {
     }
 
     shouldComponentUpdate(newProps, newState) {
-        console.log('ShouldUpdate shouldComponentUpdate..', newProps, newState, this.state.text);
+        //console.log('ShouldUpdate shouldComponentUpdate..', newProps, newState, this.state.text);
         if (newState.text !== this.state.text) {
             return true;
         } else {
@@ -25,9 +25,9 @@ export default class ShouldUpdate extends Component {
         console.log('ShouldUpdate rendering....')
         return (
             <div>
-                <div>Should Update component ----{this.state.text}
+                <div>Should Update component ----{this.state.text}</div>
 
-                    <button onClick={this.changeText}>Click to change</button></div>
+                <button onClick={this.changeText}>Click to change</button>
             </div>
         )
     }

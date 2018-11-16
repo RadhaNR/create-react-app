@@ -11,7 +11,6 @@ export default class UnControlledComponent extends Component {
             password
         }
         console.log(obj)
-        //do something 
 
         //this.state.name = "HCL";
         // this.forceUpdate();

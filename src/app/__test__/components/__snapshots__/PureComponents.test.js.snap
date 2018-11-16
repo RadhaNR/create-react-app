@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When PureComponent is given When button is clicked should display updated value 1`] = `
+<div
+  className="pureComp1"
+>
+  <div
+    className="data"
+  >
+    PureComponent Text : 
+    705
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Click
+  </button>
+</div>
+`;
+
+exports[`When PureComponent is given When changeText() is called should display updated value 1`] = `
+<div
+  className="pureComp1"
+>
+  <div
+    className="data"
+  >
+    PureComponent Text : 
+    705
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Click
+  </button>
+</div>
+`;
+
+exports[`When PureComponent is given should render the component 1`] = `
+<div
+  className="pureComp1"
+>
+  <div
+    className="data"
+  >
+    PureComponent Text : 
+    304
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Click
+  </button>
+</div>
+`;

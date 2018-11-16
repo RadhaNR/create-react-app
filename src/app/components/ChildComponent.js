@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class ChildComponent extends Component {
     render() {
+        console.log("in child component", this.props.list)
         return (
             <div>
                 <p>Child Component recieved {this.props.list.length} items from its parent component</p>
@@ -10,7 +11,7 @@ export default class ChildComponent extends Component {
                     <tbody>
                         {
                             this.props.list.map((item, i) => {
-                                return <tr key={i} onClick={() => this.props.itemSelected(item)}><td>{item.courseName} </td><td>{item.cost}</td></tr>
+                                return <tr className="userList" key={i} onClick={() => this.props.itemSelected(item)}><td>{item.courseName} </td><td>{item.cost}</td></tr>
                             })
                         }
                     </tbody>

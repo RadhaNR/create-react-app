@@ -15,7 +15,7 @@ class Cart extends Component {
 
     componentWillReceiveProps(nextProps) {
         console.log("nextProps.", nextProps)
-        this.setState({cartList: nextProps.cart});
+        this.setState({ cartList: nextProps.cart });
     }
 
     componentDidMount() {
@@ -32,9 +32,10 @@ class Cart extends Component {
     }
 
     render() {
+        console.log("cart rednering...")
         return (
             <div>
-                <p>No. of item present in cart is - {this.state.cartList.length}</p><br />
+                <p className="itemsCount">No. of item present in cart is - {this.state.cartList.length}</p><br />
                 {
                     (this.state.cartList.length > 0) ?
                         <div><table className="table table-striped">
@@ -53,8 +54,8 @@ class Cart extends Component {
                                 }
                             </tbody>
                         </table>
-                        <br/>
-                        <button onClick={this.emptyCart}>Clear Cart</button>
+                            <br />
+                            <button onClick={this.emptyCart}>Clear Cart</button>
                         </div>
                         : null
                 }
@@ -64,14 +65,14 @@ class Cart extends Component {
         )
     }
 }
-const mapStateToProps = (state, nextProps) => {
+export const mapStateToProps = (state, nextProps) => {
     console.log(state)
     return {
         cart: state.cart
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         actions: bindActionCreators(cartAction, dispatch)
     }

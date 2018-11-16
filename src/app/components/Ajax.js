@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import User from './User';
+import { getData } from '../api/api';
 
 export default class Ajax extends Component {
     constructor(props) {
@@ -11,27 +12,19 @@ export default class Ajax extends Component {
     }
 
     componentDidMount() {
-        this.getData().then(response => {
+        console.log('componentDidMount ...');
+        getData().then(response => {
+            console.log(response);
             this.setState({ userList: response.data.data });
-        });  
-        
-    }
-
-    getData = () => {
-        return new Promise((resolve, reject) => {
-            axios.get('https://reqres.in/api/users').then(function (response) {
-                resolve(response)
-            }).catch(function (error) {
-                reject(error)
-            });
         });
     }
 
     render() {
+        console.log("ajax render", this.state)
         return (
             <div>
-                No of user is : {this.state.userList.length}
-                <User user={this.state.userList}/>
+                <p>No of user is : {this.state.userList.length}</p>
+                <User user={this.state.userList} />
             </div>
         )
     }

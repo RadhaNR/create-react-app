@@ -2,7 +2,7 @@ import React from 'react';
 
 const FileNotFound = () => {
     return (
-        <div> File Not Found !!!!!!</div>
+        <div className="content"> File Not Found !!!!!!</div>
     )
 }
 

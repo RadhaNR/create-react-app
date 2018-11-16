@@ -48,14 +48,14 @@ class ProductList extends Component {
     }
 }
 
-const mapStateToProps = (state, nextProps) => {
+export const mapStateToProps = (state, nextProps) => {
     console.log(state)
     return {
         cart: state.cart
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         actions: bindActionCreators(cartAction, dispatch)
     }

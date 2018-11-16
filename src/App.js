@@ -31,7 +31,8 @@ class App extends Component {
     this.state = {
       name: 'HCL',
       age: 42,
-      showChild: false
+      showChild: false,
+      flag: true
     }
   }
 
@@ -44,6 +45,9 @@ class App extends Component {
     this.setState({ showChild: !this.state.showChild });
   }
 
+  change = () => {
+    this.setState({ flag: !this.state.flag });
+  }
   render() {
     let divTest;
     // if (this.state.showChild) {
@@ -61,31 +65,32 @@ class App extends Component {
     // }
     return (
       <div className="container-fluid">
-      <button onClick={this.change}>Click here</button><br/>
+        <button onClick={this.change}>Click here</button><br />
         <BrowserRouter>
           <div className="row">
             <div className="col-lg-3 col-md-3 col-sm-3">
-              <div><Link to="/pureComp"> PureComponent </Link></div>
-              <div><Link to="/pccp">p-c and c-p</Link></div>
-              <div><Link to="/userList"> User List </Link></div>
-              <div><Link to="/fromFun"> From Function </Link></div>
-              <div><Link to="/param/345345"> Param Component </Link></div>
-              <div><Link to="/ajax"> Ajax </Link></div>
-              <div><Link to="/productList" > Product List </Link></div>
-              <div><Link to="/cart"> Cart </Link></div>
-              <div><Link to="/controlled"> Controlled Component </Link></div>
-              <div><Link to="/unControlled"> UnControlled Component </Link></div>
-              <div><Link to="/hoc">HOC </Link></div>
-              <div><Link to="/userHoc">Load Users using HOC</Link></div>
-              <div><Link to="/productHoc">Load Products using HOC</Link></div>
+              <div><Link to="/pureComp" id="pureComp"> PureComponent </Link></div>
+              <div><Link to="/pccp" id="pccp">p-c and c-p</Link></div>
+              <div><Link to="/userList" id="userList"> User List </Link></div>
+              <div><Link to="/fromFun" id="fromFun"> From Function </Link></div>
+              <div><Link to="/param/345345" id="param"> Param Component </Link></div>
+              <div><Link to="/events" id="events">Events</Link></div>
+              <div><Link to="/ajax" id="ajax"> Ajax </Link></div>
+              <div><Link to="/productList" id="productList"> Product List </Link></div>
+              <div><Link to="/cart" id="cart"> Cart </Link></div>
+              <div><Link to="/controlled" id="controlled"> Controlled Component </Link></div>
+              <div><Link to="/unControlled" id="unControlled"> UnControlled Component </Link></div>
+              <div><Link to="/hoc" id="hoc">HOC </Link></div>
+              <div><Link to="/userHoc" id="userHoc">Load Users using HOC</Link></div>
+              <div><Link to="/productHoc" id="productHoc">Load Products using HOC</Link></div>
 
             </div>
             <div className="col-lg-9 col-md-9 col-sm-9">
               <Switch >
-                <Route path="/" component={PureComponents} exact />
+                <Route path="/" component={PureComponents} exact/>
                 <Route path="/pureComp" component={PureComponents} />
                 <Route path="/userList" component={UserList} />
-                <Route path="/fromFun" render={() => <div>Helllo</div>} />
+                <Route path="/fromFun" render={() => <div className="hello">Helllo</div>} />
                 <Route path="/param/:id" component={Param} />
                 <Route path="/ajax" component={Ajax} />
                 <Route path="/productList" component={ProductList} />
@@ -96,7 +101,8 @@ class App extends Component {
                 <Route path="/userHoc" component={UserComponent} />
                 <Route path="/productHoc" component={ProductListComponent} />
                 <Route path="/pccp" component={ParentComponent} />
-
+                <Route path="/events" component={EventComponent} />
+                
                 <Route component={FileNotFound} />
               </Switch>
             </div>

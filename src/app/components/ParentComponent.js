@@ -25,10 +25,15 @@ export default class ParentComponent extends Component {
             ],
             selectedItem: {}
         }
+        console.log("in constructor")
     }
     itemSelected = (item) => {
         console.log(item);
         this.setState({ selectedItem: item });
+    }
+
+    componentWillUnmount() {
+        console.log('com will unmount..... Parent comp')
     }
 
     render() {

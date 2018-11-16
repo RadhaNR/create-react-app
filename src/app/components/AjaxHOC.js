@@ -30,7 +30,7 @@ export default function AjaxHOC(WrappedComponent, input) {
         }
         render() {
             return (
-                <WrappedComponent data={this.state.data} />
+                <WrappedComponent data={this.state.data}/>
             );
         }
     }
